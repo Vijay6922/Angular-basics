@@ -1,0 +1,145 @@
+<!-- <p>header works!</p>
+<h1>{{test()}}</h1>
+<h1>{{60-80}}</h1>
+
+
+
+name : <input type="text"><br>
+
+<!--one way binding-->-->
+
+<!--one way binding  class binding-->
+<h1 [class]="isactive ? 'active' : 'inactive'">hiii</h1>
+
+<h1 [class.active]=isactive>bye</h1>
+
+<h1 [class]="['c1','active']">bye</h1>
+
+<!--one way binding  property binding-->
+<button [disabled]="isdisabled">submit</button>
+
+
+<input type="number" [hidden]="ishidden">
+
+<!--one way binding  style binging-->
+<h1 [style.color]="cvar">ok</h1>
+
+<h1 [style]="mystyle">see u</h1>
+
+<h1 [style.color]="cvar">ok</h1>
+
+<!--event binding-->
+<button (click)="increment1()">increment1</button>
+<button (click)="decrement()">decrement</button>
+<h1>Counter:{{count1}}</h1>
+
+NAME:<input type="text" (input)="changeName($event)">
+
+<h1>Name:{{name}}</h1>
+
+<!--two way binding-->
+City:<input [(ngModel)]="city_name" type="text">
+<p>{{city_name}}</p>
+
+<input [(ngModel)]="random" type="text"><br>
+<p>{{random}}</p>
+
+<button (click)="updateCity($event)">update</button>
+
+<br>
+
+<!--directive stuctural - ngif -->
+<h1 *ngIf="show;else noserver">this is different</h1>
+<ng-template #noserver>yuuffu</ng-template>
+
+<h1 *ngIf="!data; else sample">empty</h1>
+<ng-template #sample>{{data}}</ng-template>
+
+<!--ngFOR-->
+<table >
+    <tr *ngFor="let m of movies">
+        <td>{{m}}</td>
+    </tr>
+</table>
+<br>
+<br>
+
+<table >
+    <tr>
+        <td *ngFor="let m of movies">{{m}}</td>
+    </tr>
+</table>
+
+<table border="2">
+    <tr>
+        <td>company</td>
+        <td>index</td>
+        <td>first</td>
+        <td>last</td>
+        <td>even</td>
+        <td>odd</td>
+    </tr>
+    <tr *ngFor="let c of company;index as i;first as f;last as l;even as e;odd as o">
+        <td>{{c}}</td>
+        <td>{{i}}</td>
+        <td>{{f}}</td>
+        <td>{{l}}</td>
+        <td>{{e}}</td>
+        <td>{{o}}</td>
+    </tr>
+
+</table>
+
+<!-- for objects-->
+<table border="2">
+    <tr>
+        <td>bike name</td>
+        <td>company</td>
+        <td>speed</td>
+        <td>milage</td>
+        <td>price</td>
+    </tr>
+    <tr *ngFor="let m of bike">
+        <td>{{m.name}}</td>
+        <td>{{m.comapny}}</td>
+        <td>{{m.speed}}</td>
+        <td>{{m.price}}</td>
+        <td>{{m.milage}}</td>
+    </tr>
+
+</table>
+
+<!--ng switch-->
+
+<input type="text" [(ngModel)]="op">
+<div [ngSwitch]="op">
+    <div *ngSwitchCase="'+'">{{num1}} + {{num2}} = {{num1+num2}}</div>
+    <div *ngSwitchCase="'-'">{{num1}} - {{num2}} = {{num1-num2}}</div>
+    <div *ngSwitchCase="'*'">{{num1}} * {{num2}} = {{num1*num2}}</div>
+    <div *ngSwitchCase="'/'">{{num1}} / {{num2}} = {{num1/num2}}</div>
+    <div *ngSwitchCase="''">invalid</div>
+</div>
+
+<!--pipes-->
+<h1>{{sentence | uppercase}}</h1>
+<h1>{{sentence | titlecase}}</h1>
+<h1>{{salary |currency}}</h1>
+<h1>{{salary | currency:'INR':'symbol'}}</h1>
+<h1>{{bike | json}}</h1>
+<h1>{{dob | date:'dd/MM/yyyy'}}</h1>
+
+<!--template reference-->
+<input type="text" placehholder="Enter email" #e value="abc@gmail.com">
+<button (click)="update(e.value)">update</button>
+<div #d>{{email}}</div>
+<div>{{d.classList}}</div>
+
+<!--parent child communication-->
+<h1>{{childtitle}}</h1>
+
+<div *ngFor="let m of child1array">{{m}}</div>
+<div>{{child1sentence}}</div>
+
+<!--child to parent-->
+<button (click)="passToParent()">send</button>
+

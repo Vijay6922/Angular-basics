@@ -1,0 +1,18 @@
+p{
+    color: crimson;
+}
+
+.active{
+    background-color: black;
+    color: aliceblue;
+}
+.inactive{
+    background-color: blue;
+    color: aliceblue;
+}
+
+.c1 {
+    border: 2px solid brown;
+    border-style: dotted;
+    border-radius: 0%;
+}
